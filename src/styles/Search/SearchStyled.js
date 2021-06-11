@@ -50,7 +50,7 @@ export const SearchRegion = styled.div`
         border-radius: 5px;
        }
 `
-export const  SearchNav = styled.div`
+export const SearchNav = styled.div`
        display: flex;
        align-items: center;
        justify-content: space-between;
