@@ -55,7 +55,12 @@ export const SearchNav = styled.div`
        align-items: center;
        justify-content: space-between;
        width: 490px;
-       padding-left: 10px;
+       /* padding-left: 10px; */
        font-family: 'Roboto', sans-serif;
+       @media (max-width:665px){
+              width: 100vw;
+              justify-content: center;
+       }
+       
 
 `

@@ -13,6 +13,7 @@ const CardsDiv = styled.div`
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      width: 100vw;
 `
 export default function Home() {
   const [nameCountry, setNameCountry] = useState('');
