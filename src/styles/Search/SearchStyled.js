@@ -27,6 +27,11 @@ export const SearchBar = styled.div`
               box-sizing: border-box;
               border-radius: 5px;
         }
+        @media (max-width:665px){
+               input{
+                      width: 220px;
+               }
+        }
 `
 export const SearchRegion = styled.div`
        display: flex;
