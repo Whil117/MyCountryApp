@@ -2,9 +2,15 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Nav } from '../../components/nav/Nav';
-import { Card } from '../../styles/CardInfoCountry/CountryInfoStyled';
+import { ButtonCard, Card } from '../../styles/CardInfoCountry/CountryInfoStyled';
 
-
+const MainApp = styled.main`
+      height: 100vh;
+      background-color: ${({ active }) => active ? ' #1B1B1B' : '#F3F3F3'};
+      @media (max-width:665px){
+        height: auto;
+      }
+`
 const CardDisplayDiv = styled.div`
       display: flex;
       align-items: center;
@@ -13,6 +19,7 @@ const CardDisplayDiv = styled.div`
 `
 const Post = () => {
   const [data, setData] = useState([]);
+  const [mode, setMode] = useState('');
   const router = useRouter()
   const { pid } = router.query
 
@@ -45,14 +52,17 @@ const Post = () => {
     return hasNameCountry
   }, [pid])
 
+  useEffect(() => {
+    const getMode = localStorage.getItem('mode')
+    setMode(getMode)
+  }, []);
 
-  console.log(data)
   return (
-    <main>
-      <Nav />
+    <MainApp active={mode === 'dark'}>
+      <Nav mode={mode} setMode={setMode} />
       <CardDisplayDiv>
         {data.map(item => (
-          <Card>
+          <Card active={mode === 'dark'}>
             <div>
               <img src={item.flag} alt={item.name} />
             </div>
@@ -69,11 +79,12 @@ const Post = () => {
                 <li><b>Language: </b>{item?.language}</li>
                 <li><b>Traslations: </b>{item?.traslations}</li>
               </ul>
+              <ButtonCard active={mode === 'dark'} type="button" onClick={() => router.back()}>Back</ButtonCard>
             </div>
           </Card>
         ))}
       </CardDisplayDiv>
-    </main>
+    </MainApp>
   )
 }
 

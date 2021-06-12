@@ -8,11 +8,11 @@ export const SearchBar = styled.div`
             border: none;
            padding: 10px;
             width: 377px;
-            height: 48px;   
-            background: #FFFFFF;
-            border: 0.5px solid #000000;
+            height: 48px;  
             box-sizing: border-box;
             border-radius: 5px;
+            background-color: ${({ active }) => active ? '#313131' : 'white'};
+            border:${({ active }) => active ? '0.5px solid white' : '0.5px solid #000000'};
         }
         button{
               display: flex;
@@ -44,8 +44,9 @@ export const SearchRegion = styled.div`
         padding: 10px;
         width: 109px;
         height: 48px;
-        background: #FFFFFF;
-        border: 0.5px solid #000000;
+        background-color: ${({ active }) => active ? '#313131' : 'white'};
+            border:${({ active }) => active ? '0.5px solid white' : '0.5px solid #000000'};
+            color: ${({ active }) => active ? 'white' : 'black'};
         box-sizing: border-box;
         border-radius: 5px;
        }
@@ -55,11 +56,12 @@ export const SearchNav = styled.div`
        align-items: center;
        justify-content: space-between;
        width: 490px;
-       /* padding-left: 10px; */
+       padding-left: 40px;
        font-family: 'Roboto', sans-serif;
        @media (max-width:665px){
-              width: 100vw;
+              width: 100%;
               justify-content: center;
+              padding-left: 0px;
        }
        
 
