@@ -28,7 +28,6 @@ const Post = () => {
     const url = `https://restcountries.eu/rest/v2/name/${value}?fullText=true`
     const resp = await fetch(url);
     const data = await resp.json();
-    console.log(data)
     const country = data.map((item) => {
       return {
         name: item.name,

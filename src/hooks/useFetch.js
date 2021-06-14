@@ -7,7 +7,6 @@ export const useFetch = (link) => {
     const myUseFetch = async (url) => {
         const resp = await fetch(url);
         const data = await resp.json();
-        console.log(data)
         const country = data.map((item) => {
             return {
                 name: item.name,
