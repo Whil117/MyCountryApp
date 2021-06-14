@@ -16,6 +16,16 @@ export const NavBar = styled.div`
        input{
               display:none;
        }
+       a{
+              display: flex;
+              align-items: center;
+              color: black;
+              text-decoration:none;
+       }
+       a:hover{
+              color: black;
+              text-decoration: underline;
+       }
        @media (max-width:665px){
               padding-left: 20px;
        }
@@ -35,7 +45,7 @@ export const LabelsMode = styled.label`
 `
 export const DivLabels = styled.div`
        display: flex;
-       justify-content: ${({active})=> active?  'flex-end' : 'flex-start'};
+       justify-content: ${({ active }) => active ? 'flex-end' : 'flex-start'};
        width: 73px;
        height: 35px;
        background: #C9C9C9;

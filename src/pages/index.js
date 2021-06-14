@@ -29,8 +29,6 @@ export default function Home() {
   const handleRegion = (event) => {
     setRegion(event.target.value)
   }
-  const list = { hidden: { opacity: 0 } }
-  const item = { hidden: { x: -10, opacity: 0 } }
   return (
     <>
       <MainApp active={mode === 'dark'}>
@@ -47,3 +45,4 @@ export default function Home() {
     </>
   )
 }
+//no puedo hablar si no estoy en la p

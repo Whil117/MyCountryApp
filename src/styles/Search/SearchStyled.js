@@ -7,7 +7,7 @@ export const SearchBar = styled.div`
         margin-right: 5px;
         input{
             border: none;
-           padding: 10px;
+            padding: 10px;
             width: 377px;
             height: 48px;  
             box-sizing: border-box;
@@ -48,6 +48,34 @@ export const SearchNav = styled.div`
        padding-left: 40px;
        font-family: 'Roboto', sans-serif;
        margin-bottom: 50px;
+       button{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 9px 10px;
+       width: 48px;
+       height: 48px;
+       background: #FFFFFF;
+       border: 0.5px solid #000000;
+       box-sizing: border-box;
+       border-radius: 5px;
+       background-color: ${({ active }) => active ? '#313131' : 'white'};
+       border:${({ active }) => active ? '0.5px solid white' : '0.5px solid #000000'};
+       margin-right:10px;
+       svg{
+              path{
+                     fill:${({ active }) => active ?  'white' : 'black'};
+              }
+       }
+       }
+       button:active{
+              background-color:red;
+              svg{
+              path{
+                     fill:${({ active }) => active ?  'black' : 'white'};
+              }
+       }
+       }
        @media (max-width:665px){
               width: 100%;
               justify-content: center;
